@@ -29,8 +29,6 @@ function [q,b,epsilon,qest,dim,rho,peq,rho0,qest0] = VBAuto(x,k,k2,nvars,operato
     
     [d,inds] = knnCPU(x,x,k);
     
-    size(d)
-    k2
     toc
 
     %%% Build ad hoc bandwidth function by autotuning epsilon for each pt.
