@@ -52,7 +52,7 @@ for jj = 1:length(segments)-1
         end
         
         x(blockStart + (1:blockSize) - jj*max(delays),:) = (double(fullState)-repmat(meanState,size(fullState,1),1));
-        originalImageIndices(blockStart + (1:blockSize) - jj*max(delays)) = blockStart + (1:blockSize) - delays(j);
+        originalImageIndices(blockStart + (1:blockSize) - jj*max(delays)) = blockStart + (1:blockSize) - delays(j);jjjjj    hhhhhh
     end
    
     blockStart = max(delays) + segStart + numBlocks*blockSize;

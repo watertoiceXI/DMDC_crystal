@@ -51,12 +51,11 @@ if (spatialdim<macrodim)
 end
 
 if size(macroData,2)>10
-    1
- macroVars = double(reshape(macroData,[size(macroData,1),microModel.spatialdim]))*microModel.projection;
+    macroVars = double(reshape(macroData,[size(macroData,1),microModel.spatialdim]))*microModel.projection;
 else
     macroVars = double(reshape(macroData,[size(macroData,1),microModel.spatialdim]));%*microModel.projection;
 end
- clear macroData
+clear macroData
 macroVars = 0.5*macroVars./repmat(mean(macroVars.^2,1).^(1/2),size(macroVars,1),1);
 
 toc;

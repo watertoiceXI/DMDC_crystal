@@ -1,12 +1,12 @@
-function info = DMDCZGF4Rob(ims,inds,segments,micromodel,microCoords,delays)
-numdims = 16;
+function info = DMDCZGF4Rob(ims,inds,segments,microCoords,delays)
+numdims_out = 16;
 kappa = 1/max(delays);
 k = 256;
 sigma = 0;
 alpha = 1/2;
 videoTitle = 'tempVid.mpeg';
 pr = 0;
-k2 = k/4;
+k2 = k/4; 
 % EXAMPLE CALLS
 % info = DISO6(ims,inds,segments,1,0,1:8,8,1,256,0,1/2);
 % info = DISO6(ims,inds,segments,1,0,1:8);
@@ -27,6 +27,8 @@ k2 = k/4;
 % gpuID = -1
 
 
+micromodel = 1; %Random Projections
+
 
 %%%%% INITIALIZE DISO PARAMETERS                %%%%%%%%%%%%%%%%%%%%
 
@@ -40,7 +42,7 @@ end
 info.inds = inds;
 info.segments = segments;
 info.delays = delays;
-info.numdims = numdims;
+info.numdims = numdims_out;
 info.kappa = kappa;
 info.k = k;
 info.sigma = sigma;
@@ -73,7 +75,7 @@ info.micromodelNumber = micromodel;
 
 
 
-[info.q,info.b,info.sigma,info.quest,info.VBAutoDimension] = VBAuto(info.x,k,k2,numdims,1);
+[info.q,info.b,info.sigma,info.quest,info.VBAutoDimension] = VBAuto(info.x,k,k2,numdims_out,1);
 
 % info.ims=0;
 
