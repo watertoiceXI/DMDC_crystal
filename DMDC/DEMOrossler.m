@@ -96,17 +96,7 @@ for D=50:50:5000
     figure(78);
     hold all
     plot(DimVol(1),DimVol(2),'*')
-    
-    figure(79);
-    hold all
-    plot( DimVol(1),DimVol(2),'.')
-    dataToyDelay(D).dim=DimVol(1);
-    dataToyDelay(D).vol=DimVol(2);
-    dataToyDelay(D).parameter = aparam;
-    dataToyDelay(D).hh = hh;
-    dataToyDelay(D).D  = D;
-    dataToyDelay(D).sigma  = infon.sigs;
-    
+        
 end
 
 
